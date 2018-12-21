@@ -1,0 +1,115 @@
+<CustomLabel@Label>:
+    text_size: self.size
+    valign: "middle"
+    padding_x: 5
+
+<SingleLineTextInput@TextInput>:
+    multiline: False
+
+<GreenButton@Button>:
+    background_color: 1, 4, 3, 2
+    size_hint_y: None
+    height: self.parent.height * 0.120
+
+UserGroup
+    male: chk_male
+    female: chk_female
+    age: txt_age
+    username: txt_username
+    password: txt_password
+    email: txt_email
+    alamat: txt_alamat
+
+    GridLayout:
+        cols: 2
+        padding : 30,30
+        spacing: 20, 20
+        row_default_height: '30dp'
+
+        Image: 
+            source: "register.png"
+            size_hint_y: None
+            height: 130
+            valign: 'middle'
+			
+		CustomLabel:
+			text: 'Register Now'
+			text_size: self.size
+			valign:'middle'
+
+        CustomLabel:
+        	text: 'Username'
+        	text_size: self.size
+        	valign: 'middle'
+
+        SingleLineTextInput:
+            id: txt_username
+
+        CustomLabel:
+        	text: 'Password'
+        	text_size: self.size
+        	valign: 'middle'
+
+        SingleLineTextInput:
+            id: txt_password
+
+        CustomLabel:
+        	text: 'Email'
+        	text_size: self.size
+        	valign: 'middle'
+
+        SingleLineTextInput:
+            id: txt_email
+
+        CustomLabel:
+        	text: 'Alamat'
+        	text_size: self.size
+        	valign: 'middle'
+
+        SingleLineTextInput:
+            id: txt_alamat
+
+        Label:
+            text: 'Male'
+            text_size: self.size
+            valign: 'middle'
+
+        CheckBox:
+            group: 'check'
+            id : chk_male
+
+        Label:
+            text: 'Female'
+            text_size: self.size
+            valign: 'middle'
+
+        CheckBox:
+            group: 'check'
+            id: chk_female
+
+        CustomLabel:
+            text: 'age'
+            text_size: self.size
+            valign: 'middle'
+
+        SingleLineTextInput:
+            id: txt_age
+
+        GreenButton:
+            text: 'Register'
+            on_press: root.insert_data()
+           
+        GreenButton:
+            text: 'Cancel'
+            on_press: app.stop()
+
+        GreenButton:
+            text: 'login'
+            on_press: os.system("python3 test1.py")
+
+        Image: 
+            source: "fb.png"
+            size_hint_y: None
+            height: 70
+            valign: 'middle'
+        
